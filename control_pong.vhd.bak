@@ -1,0 +1,117 @@
+
+LIBRARY IEEE;
+USE ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+use ieee.std_logic_unsigned.all;
+------------------------------------
+ENTITY control_pong IS
+	PORT(	clk        : IN STD_LOGIC; 
+	      rst        : IN STD_LOGIC; 
+			SQ_Y7_OUT  : IN STD_LOGIC_VECTOR(10 DOWNTO 0); 
+			SQ_x7_OUT  : IN STD_LOGIC_VECTOR(10 DOWNTO 0); 
+			SQ_Y1_OUT  : IN STD_LOGIC_VECTOR(10 DOWNTO 0); 
+			SQ_x1_OUT  : IN STD_LOGIC_VECTOR(10 DOWNTO 0); 
+			SQ_Y2_OUT  : IN STD_LOGIC_VECTOR(10 DOWNTO 0); 
+			SQ_x2_OUT  : IN STD_LOGIC_VECTOR(10 DOWNTO 0))
+			sel_XB     : OUT STD_LOGIC_VECTOR(1 DOWNTO 0);
+			sel_YB     : OUT STD_LOGIC_VECTOR(1 DOWNTO 0));
+END ENTITY;
+-------------------------------------
+ARCHITECTURE structural OF control_pong IS  
+
+	TYPE state IS(st_iddle,st_der_ab,st_der_arr, st_der_ab,st_izq_arr);
+   SIGNAL pr_state : state;
+	SIGNAL nx_state : state;
+   
+
+BEGIN
+                              
+	 
+	 PROCESS (rst, clk)
+	 BEGIN
+		IF(rst='1') THEN
+			pr_state<=st_iddle;
+		ELSIF (rising_edge(clk)) THEN
+			pr_state <=nx_state;
+		END IF;
+	END PROCESS;
+	 
+	 PROCESS (nx_state, pr_state, SQ_Y7_OUT, SQ_x7_OUT, SQ_Y1_OUT, SQ_x1_OUT, SQ_Y2_OUT, SQ_x2_OUT, sel_XB, sel_YB)
+	 BEGIN
+        CASE pr_state IS
+            WHEN st_iddle =>
+							
+							 --IF(ena ='1') THEN
+							 nx_state <= st_der_ab;
+							
+				WHEN st_der_ab =>
+							 
+							 IF SQ_X2_OUT 
+							 
+							 
+							 
+							 
+				WHEN st_datolisto =>
+							 estados <= "010";
+							 enaRegA<='1';
+							 enaRegB<='1';
+							 enaTimer <='0';
+							 enainit <='0';
+							 enaTimerSeg1 <='0';
+							 enaTimerSeg2 <='0';
+							 Led <='0';
+							 dataready_s <='1';
+							 IF(ena='1') THEN
+							 nx_state <= st_esperarunsegundo1;
+							 ELSE
+							 nx_state <= st_iddle;
+							 END IF;
+				WHEN st_esperarunsegundo1 =>
+						    estados <= "011";
+							 enaRegA<='0';
+							 enaRegB<='0';
+							 enaTimer <='0';
+							 enainit <='0';
+							 enaTimerSeg1 <='1';
+							 enaTimerSeg2 <='0';
+							 Led <='0';
+							 dataready_s <='0';
+							 IF(max_tick ='0' AND ena='1') THEN
+							 nx_state <= st_esperarunsegundo1;
+							 ELSIF(max_tick ='1' AND ena='1') THEN
+							 nx_state <= st_esperarunsegundo2;
+							 ELSE
+							 nx_state <= st_iddle;
+							 END IF;
+				WHEN st_esperarunsegundo2 =>
+							 estados <= "100";
+							 enaRegA<='0';
+							 enaRegB<='0';
+							 enaTimer <='0';
+							 enainit <='0';
+							 enaTimerSeg1 <='0';
+							 enaTimerSeg2 <='1';
+							 Led <='1';
+							 dataready_s <='0';
+							 IF(max_tick1 ='0' AND ena='1') THEN
+							 nx_state <= st_esperarunsegundo2;
+							 ELSE
+							 nx_state <= st_iddle;
+							 END IF;
+				END CASE;
+		END PROCESS;		 
+		
+   -- REGISTRO A--
+	REGAA : ENTITY work.REGISTRO_A
+		PORT MAP(clk =>clk,
+					rst =>rst,
+					ena =>enaRegA,
+					data =>dataA,
+					q =>regA);
+					
+END ARCHITECTURE; 
+
+
+
+
+

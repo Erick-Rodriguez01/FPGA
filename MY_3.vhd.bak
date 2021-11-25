@@ -1,0 +1,21 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.NUMERIC_STD.ALL;
+
+
+package MY_3 is 
+procedure SQ_3 (SIGNAL xcur, ycur,xpos, ypos: IN INTEGER; SIGNAL RGB:OUT STD_LOGIC_VECTOR (3 DOWNTO 0); SIGNAL DRAW: OUT STD_LOGIC);
+END MY_3; 
+
+pacKage BODY MY_3 IS 
+procedure SQ_3(SIGNAL xcur, ycur,xpos, ypos: IN INTEGER; SIGNAL RGB:OUT STD_LOGIC_VECTOR (3 DOWNTO 0); SIGNAL DRAW: OUT STD_LOGIC)IS 
+BEGIN 
+IF (xcur >xpos AND xcur <(xpos+15)AND ycur > (ypos)AND ycur <(ypos +100)) THEN 
+	RGB<= "1111"; 
+	DRAW <= '1'; 
+	ELSE 
+	DRAW <= '0';  
+
+END IF; 
+END SQ_3; 
+END MY_3; 

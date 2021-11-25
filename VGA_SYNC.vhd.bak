@@ -1,0 +1,54 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+USE IEEE.NUMERIC_STD.ALL;
+
+--VGA 1280x1024
+--------------------------------------------------------
+ENTITY SYNC IS
+    PORT(   
+			rst        : IN  STD_LOGIC;
+			clk        : IN  STD_LOGIC;
+			Hsync      : OUT STD_LOGIC;
+			Vsync 	  : OUT STD_LOGIC;
+			R   	     : OUT STD_LOGIC_VECTOR(3 DOWNTO 0);
+			G   		  : OUT STD_LOGIC_VECTOR(3 DOWNTO 0));
+			B          : OUT STD_LOGIC_VECTOR(3 DOWNTO 0));
+END ENTITY;
+--------------------------------------------------------
+ARCHITECTURE MAIN OF SYNC IS
+SIGNAL HPOS: INTEGER RANGE 0 TO 1688:=0;
+SIGNAL VPOS: INTEGER RANGE 0 TO 1066:=0;
+
+BEGIN
+PROCESS(clk)
+BEGIN
+IF (rising_edge(clk))THEN --Sí hay un pulso de subida
+	IF (HPOS<1688) THEN		-- Sí no ha recorrido todas las zonas visibles y no visibles
+	HPOS<=HPOS+1;				-- Cambie de posición.
+	ELSE 
+	HPOS<=0;
+		IF(VPOS<1066) THEN
+			VPOS<=VPOS+1;
+			ELSE
+			VPOS<=0;
+		END IF;
+	END IF;
+	IF (HPOS>48 AND HPOS<160)THEN
+		HSYNC<='0';
+		ELSE
+		HSYNC<='1';
+	END IF;
+	IF (VPOS>0 AND VPOS<4)THEN
+		VSYNC<='0';
+		ELSE
+		VSYNC<='1';
+	END IF;
+	IF ((HPOS>0 AND HPOS<408) OR (VPOS>0 AND VPOS<42)) THEN
+		R<="0000";
+		G<="0000";
+		B<="0000";
+	END IF;
+END IF;
+END PROCESS;
+END MAIN;
+	

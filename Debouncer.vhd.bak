@@ -1,0 +1,52 @@
+LIBRARY IEEE;
+USE ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+------------------------------------
+ENTITY Debouncer IS
+	GENERIC( MILIS : INTEGER := 5);
+	PORT(
+			clk    : IN  STD_LOGIC;
+			rst    : IN  STD_LOGIC;
+         sw     : IN  STD_LOGIC;
+         deb_sw : OUT STD_LOGIC);   			
+END ENTITY;
+-------------------------------------
+ARCHITECTURE structural OF Debouncer IS     
+     SIGNAL contador          : UNSIGNED(15 DOWNTO 0);
+     SIGNAL contador_1m       : UNSIGNED(15 DOWNTO 0);
+     SIGNAL contador_mseg     : UNSIGNED(15 DOWNTO 0); 
+     SIGNAL contador_5m 		: UNSIGNED(15 DOWNTO 0);
+     SIGNAL ena               : STD_LOGIC;
+BEGIN
+   contador_1m <= (OTHERS => '0') WHEN (contador = 50000 OR ena = '0') ELSE 
+                    contador + 1 WHEN (ena = '1') ELSE
+                   (OTHERS => '0');                
+						 
+   contador_5m <= (OTHERS => '0') WHEN (contador_mseg = MILIS OR ena = '0') ELSE
+                        contador_mseg  + 1 WHEN (ena ='1' AND contador = 50000) ELSE
+                        contador_mseg;
+                                            
+    PROCESS(clk, rst)
+         VARIABLE temp   : UNSIGNED(15 DOWNTO 0);
+         VARIABLE temp_m : UNSIGNED(15 DOWNTO 0);
+			
+     BEGIN
+	     IF (rst = '1') THEN 
+            temp 		 := (OTHERS => '0');
+            temp_m    := (OTHERS => '0');
+				
+        ELSIF(rising_edge(clk))  THEN
+            temp      := contador_1m;
+            temp_m    := contador_5m;
+        END IF;
+		  
+		  contador      <= temp;
+        contador_mseg <= temp_m;
+		  
+	 END PROCESS;
+    
+    deb_sw <= '1' WHEN contador_mseg = MILIS ELSE '0';
+    ena    <= '0' WHEN contador_mseg = MILIS ELSE
+				  '1' WHEN sw ='0' ELSE '0';
+
+END ARCHITECTURE;

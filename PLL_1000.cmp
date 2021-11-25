@@ -1,0 +1,8 @@
+	component PLL_1000 is
+		port (
+			clk_clk      : in  std_logic := 'X'; -- clk
+			reset_reset  : in  std_logic := 'X'; -- reset
+			clk_1000_clk : out std_logic         -- clk
+		);
+	end component PLL_1000;
+

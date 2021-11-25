@@ -1,0 +1,18 @@
+# system info PLL_P on 2021.11.23.16:15:30
+system_info:
+name,value
+DEVICE,EP3C16F484C6
+DEVICE_FAMILY,Cyclone III
+GENERATION_ID,1637702126
+#
+#
+# Files generated for PLL_P on 2021.11.23.16:15:30
+files:
+filepath,kind,attributes,module,is_top
+PLL_P/simulation/PLL_P.vhd,VHDL,,PLL_P,true
+PLL_P/simulation/submodules/PLL_P_altpll_0.vho,VHDL,,PLL_P_altpll_0,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+PLL_P.altpll_0,PLL_P_altpll_0

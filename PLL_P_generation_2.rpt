@@ -1,0 +1,214 @@
+Info: Starting: Create simulation model
+Info: ip-generate --project-directory="C:/Users/USER/Downloads/PROYECTO FPGA/70/60/" --output-directory="C:/Users/USER/Downloads/PROYECTO FPGA/70/60/PLL_P/simulation/" --file-set=SIM_VHDL --report-file="sopcinfo:C:/Users/USER/Downloads/PROYECTO FPGA/70/60/PLL_P.sopcinfo" --report-file="html:C:/Users/USER/Downloads/PROYECTO FPGA/70/60/PLL_P.html" --report-file="sip:C:/Users/USER/Downloads/PROYECTO FPGA/70/60/PLL_P/simulation/PLL_P.sip" --report-file="csv:C:/Users/USER/Downloads/PROYECTO FPGA/70/60/PLL_P.csv" --report-file="spd:C:/Users/USER/Downloads/PROYECTO FPGA/70/60/PLL_P.spd" --report-file="cmp:C:/Users/USER/Downloads/PROYECTO FPGA/70/60/PLL_P.cmp" --system-info=DEVICE_FAMILY="Cyclone III" --system-info=DEVICE=EP3C16F484C6 --system-info=DEVICE_SPEEDGRADE=6 --component-file="C:/Users/USER/Downloads/PROYECTO FPGA/70/60/PLL_P.qsys"
+Progress: Loading 60/PLL_P.qsys
+Progress: Reading input file
+Progress: Adding altpll_0 [altpll 13.0]
+Progress: Parameterizing module altpll_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Warning: PLL_P.altpll_0: altpll_0.pll_slave must be connected to an Avalon-MM master
+Warning: PLL_P.altpll_0: altpll_0.areset_conduit must be exported, or connected to a matching conduit.
+Warning: PLL_P.altpll_0: altpll_0.locked_conduit must be exported, or connected to a matching conduit.
+Warning: PLL_P.altpll_0: altpll_0.phasedone_conduit must be exported, or connected to a matching conduit.
+Info: PLL_P: Generating PLL_P "PLL_P" for SIM_VHDL
+Info: pipeline_bridge_swap_transform: After transform: 1 modules, 0 connections
+Info: No custom instruction connections, skipping transform 
+Info: No Avalon connections, skipping transform 
+Info: merlin_translator_transform: After transform: 1 modules, 0 connections
+Info: altpll_0: Generating VHDL simulation model
+Warning: Verilog HDL or VHDL warning at PLL_P_altpll_0.vhd(303): object "wire_w_address_range2w" assigned a value but never read
+Info: altpll_0: Generated simulation model PLL_P_altpll_0.vho
+Info: altpll_0: "PLL_P" instantiated altpll "altpll_0"
+Info: PLL_P: Done PLL_P" with 2 modules, 2 files, 11797 bytes
+Info: ip-generate succeeded.
+Info: Finished: Create simulation model
+Info: Starting: Create Modelsim Project.
+Info: sim-script-gen --spd="C:/Users/USER/Downloads/PROYECTO FPGA/70/60/PLL_P.spd" --output-directory="C:/Users/USER/Downloads/PROYECTO FPGA/70/60/PLL_P/simulation/"
+Info: Doing: ip-make-simscript --spd=C:/Users/USER/Downloads/PROYECTO FPGA/70/60/PLL_P.spd --output-directory=C:/Users/USER/Downloads/PROYECTO FPGA/70/60/PLL_P/simulation/
+Info: Generating the following file(s) for MODELSIM simulator in C:/Users/USER/Downloads/PROYECTO FPGA/70/60/PLL_P/simulation/ directory:
+Info: 	mentor/msim_setup.tcl
+Info: Skipping VCS script generation since VHDL file $QUARTUS_INSTALL_DIR/eda/sim_lib/altera_syn_attributes.vhd is required for simulation
+Info: Generating the following file(s) for VCSMX simulator in C:/Users/USER/Downloads/PROYECTO FPGA/70/60/PLL_P/simulation/ directory:
+Info: 	synopsys/vcsmx/synopsys_sim.setup
+Info: 	synopsys/vcsmx/vcsmx_setup.sh
+Info: Generating the following file(s) for NCSIM simulator in C:/Users/USER/Downloads/PROYECTO FPGA/70/60/PLL_P/simulation/ directory:
+Info: 	cadence/cds.lib
+Info: 	cadence/hdl.var
+Info: 	cadence/ncsim_setup.sh
+Info: 	1 .cds.lib files in cadence/cds_libs/ directory
+Info: Generating the following file(s) for RIVIERAPRO simulator in C:/Users/USER/Downloads/PROYECTO FPGA/70/60/PLL_P/simulation/ directory:
+Info: 	aldec/rivierapro_setup.tcl
+Info: Finished: Create Modelsim Project.
+Info: 
+Info: Starting: Create testbench Qsys system
+Info: C:/Users/USER/Downloads/PROYECTO FPGA/70/60/PLL_P/testbench/PLL_P.ipx
+Info: ip-generate --project-directory="C:/Users/USER/Downloads/PROYECTO FPGA/70/60/" --output-directory="C:/Users/USER/Downloads/PROYECTO FPGA/70/60/" --report-file="sopcinfo:C:/Users/USER/Downloads/PROYECTO FPGA/70/60/PLL_P.sopcinfo" --report-file="html:C:/Users/USER/Downloads/PROYECTO FPGA/70/60/PLL_P.html" --system-info=DEVICE_FAMILY="Cyclone III" --system-info=DEVICE=EP3C16F484C6 --system-info=DEVICE_SPEEDGRADE=6 --component-file="C:/Users/USER/Downloads/PROYECTO FPGA/70/60/PLL_P.qsys"
+Progress: Loading 60/PLL_P.qsys
+Progress: Reading input file
+Progress: Adding altpll_0 [altpll 13.0]
+Progress: Parameterizing module altpll_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Warning: PLL_P.altpll_0: altpll_0.pll_slave must be connected to an Avalon-MM master
+Warning: PLL_P.altpll_0: altpll_0.areset_conduit must be exported, or connected to a matching conduit.
+Warning: PLL_P.altpll_0: altpll_0.locked_conduit must be exported, or connected to a matching conduit.
+Warning: PLL_P.altpll_0: altpll_0.phasedone_conduit must be exported, or connected to a matching conduit.
+Info: ip-generate succeeded.
+Info: Loading component library for testbench.
+Progress: 
+Progress: 
+Progress: 
+Progress: (1) searching C:/altera/13.0sp1/quartus/sopc_builder/bin/root_components.ipx (ipx file)
+Info: Reading index C:/altera/13.0sp1/quartus/sopc_builder/bin/root_components.ipx
+Info: C:/altera/13.0sp1/quartus/sopc_builder/bin/root_components.ipx: Loading now from components.ipx
+Info: Reading index C:/altera/13.0sp1/quartus/sopc_builder/bin/ip_component_categories.ipx
+Info: C:/altera/13.0sp1/quartus/sopc_builder/bin/ip_component_categories.ipx described 0 plugins, 0 paths, in 0,01 seconds
+Info: C:/altera/13.0sp1/quartus/sopc_builder/bin/ip_component_categories.ipx matched 1 files in 0,01 seconds
+Info: Reading index C:/altera/13.0sp1/ip/altera/altera_components.ipx
+Info: C:/altera/13.0sp1/ip/altera/altera_components.ipx described 848 plugins, 0 paths, in 0,12 seconds
+Info: C:/altera/13.0sp1/ip/**/* matched 97 files in 0,12 seconds
+Info: C:/SPB_DATA/.altera.quartus/ip/13.0sp1/**/* matched 0 files in 0,00 seconds
+Info: C:/Users/USER/Downloads/PROYECTO FPGA/70/60/PLL_P/testbench/ip/**/* matched 0 files in 0,00 seconds
+Info: Reading index C:/Users/USER/Downloads/PROYECTO FPGA/70/60/PLL_P/testbench/PLL_P.ipx
+Progress: Loading 60/PLL_P.qsys
+Info: C:/Users/USER/Downloads/PROYECTO FPGA/70/60/* matched 48 files in 0,01 seconds
+Info: C:/Users/USER/Downloads/PROYECTO FPGA/70/60/ip/**/* matched 0 files in 0,00 seconds
+Progress: Loading PLL/PLL.qsys
+Info: C:/Users/USER/Downloads/PROYECTO FPGA/70/60/*/* matched 135 files in 0,02 seconds
+Info: C:/Users/USER/Downloads/PROYECTO FPGA/70/60/PLL_P/testbench/PLL_P.ipx described 0 plugins, 3 paths, in 0,03 seconds
+Info: C:/Users/USER/Downloads/PROYECTO FPGA/70/60/PLL_P/testbench/* matched 1 files in 0,03 seconds
+Info: C:/Users/USER/Downloads/PROYECTO FPGA/70/60/PLL_P/testbench/*/* matched 0 files in 0,00 seconds
+Info: Reading index C:/altera/13.0sp1/quartus/sopc_builder/builtin.ipx
+Info: C:/altera/13.0sp1/quartus/sopc_builder/builtin.ipx described 103 plugins, 0 paths, in 0,01 seconds
+Info: C:/altera/13.0sp1/quartus/sopc_builder/**/* matched 9 files in 0,01 seconds
+Info: Reading index C:/altera/13.0sp1/quartus/common/librarian/factories/index.ipx
+Info: C:/altera/13.0sp1/quartus/common/librarian/factories/index.ipx described 151 plugins, 0 paths, in 0,02 seconds
+Info: C:/altera/13.0sp1/quartus/common/librarian/factories/**/* matched 4 files in 0,02 seconds
+Info: C:/altera/13.0sp1/quartus/sopc_builder/bin/$IP_IPX_PATH matched 1 files in 0,00 seconds
+Info: C:/altera/13.0sp1/quartus/sopc_builder/bin/root_components.ipx described 0 plugins, 9 paths, in 0,20 seconds
+Info: C:/altera/13.0sp1/quartus/sopc_builder/bin/root_components.ipx matched 1 files in 0,20 seconds
+Progress: 
+Progress: 
+Progress: 
+Info: Loading presets
+Progress: Loading presets
+Info: Running script C:/altera/13.0sp1/quartus/sopc_builder/bin/tbgen.tcl
+Info: acds::register_package_version 12.1
+Info: send_message Info TB_Gen: QSYS Testbench Generator Rev: $Revision: #2 $
+Info: TB_Gen: QSYS Testbench Generator Rev: $Revision: #2 $
+Info: get_module_property NAME
+Info: send_message Info TB_Gen: System design is: PLL_P
+Info: TB_Gen: System design is: PLL_P
+Info: get_interfaces 
+Info: get_connections 
+Info: get_interface_property rst EXPORT_OF
+Info: get_instance_property altpll_0 CLASS_NAME
+Info: get_instance_assignment altpll_0 testbench.partner.map.inclk_interface_reset
+Info: get_interface_property clk_p EXPORT_OF
+Info: get_instance_property altpll_0 CLASS_NAME
+Info: get_instance_assignment altpll_0 testbench.partner.map.c0
+Info: get_interface_property clk EXPORT_OF
+Info: get_instance_property altpll_0 CLASS_NAME
+Info: get_instance_assignment altpll_0 testbench.partner.map.inclk_interface
+Info: send_message Info TB_Gen: Creating testbench system : PLL_P_tb with clock and reset BFMs
+Info: TB_Gen: Creating testbench system : PLL_P_tb with clock and reset BFMs
+Info: create_system PLL_P_tb
+Info: add_instance PLL_P_inst PLL_P 
+Info: set_use_testbench_naming_pattern true
+Info: get_instance_interfaces PLL_P_inst
+Info: get_instance_interface_property PLL_P_inst rst CLASS_NAME
+Info: get_instance_interface_property PLL_P_inst clk_p CLASS_NAME
+Info: get_instance_interface_property PLL_P_inst clk CLASS_NAME
+Info: get_instance_interface_property PLL_P_inst clk CLASS_NAME
+Info: send_message Info TB_Gen: clock_sink found: clk
+Info: TB_Gen: clock_sink found: clk
+Info: get_instance_interface_property PLL_P_inst clk CLASS_NAME
+Info: add_instance PLL_P_inst_clk_bfm altera_avalon_clock_source 
+Info: get_instance_property PLL_P_inst_clk_bfm CLASS_NAME
+Info: get_instance_interface_parameter_value PLL_P_inst clk clockRate
+Info: send_message Warning TB_Gen: clockRate is less than 1Hz; setting to 50MHz
+Warning: TB_Gen: clockRate is less than 1Hz; setting to 50MHz
+Info: set_instance_parameter_value PLL_P_inst_clk_bfm CLOCK_RATE 50000000
+Info: set_instance_parameter_value PLL_P_inst_clk_bfm CLOCK_UNIT 1
+Info: get_instance_property PLL_P_inst_clk_bfm CLASS_NAME
+Info: get_instance_interface_property PLL_P_inst clk CLASS_NAME
+Info: get_instance_interfaces PLL_P_inst_clk_bfm
+Info: get_instance_interface_property PLL_P_inst_clk_bfm clk CLASS_NAME
+Info: add_connection PLL_P_inst_clk_bfm.clk PLL_P_inst.clk
+Info: get_instance_interface_property PLL_P_inst rst CLASS_NAME
+Info: send_message Info TB_Gen: reset_sink found: rst
+Info: TB_Gen: reset_sink found: rst
+Info: get_instance_interface_property PLL_P_inst rst CLASS_NAME
+Info: add_instance PLL_P_inst_rst_bfm altera_avalon_reset_source 
+Info: get_instance_property PLL_P_inst_rst_bfm CLASS_NAME
+Info: get_instance_interface_ports PLL_P_inst rst
+Info: get_instance_interface_port_property PLL_P_inst rst rst_reset ROLE
+Info: set_instance_parameter_value PLL_P_inst_rst_bfm ASSERT_HIGH_RESET 1
+Info: set_instance_parameter_value PLL_P_inst_rst_bfm INITIAL_RESET_CYCLES 50
+Info: get_instance_property PLL_P_inst_rst_bfm CLASS_NAME
+Info: get_instance_interfaces PLL_P_inst_rst_bfm
+Info: get_instance_interface_property PLL_P_inst_rst_bfm reset CLASS_NAME
+Info: get_instance_interface_property PLL_P_inst_rst_bfm clk CLASS_NAME
+Info: get_instance_property PLL_P_inst_rst_bfm CLASS_NAME
+Info: get_instance_interface_parameter_value PLL_P_inst rst associatedClock
+Info: get_instance_interface_property PLL_P_inst clk CLASS_NAME
+Info: get_instance_interfaces PLL_P_inst_clk_bfm
+Info: get_instance_interface_property PLL_P_inst_clk_bfm clk CLASS_NAME
+Info: add_connection PLL_P_inst_clk_bfm.clk PLL_P_inst_rst_bfm.clk
+Info: get_instance_interface_property PLL_P_inst rst CLASS_NAME
+Info: get_instance_interfaces PLL_P_inst_rst_bfm
+Info: get_instance_interface_property PLL_P_inst_rst_bfm reset CLASS_NAME
+Info: get_instance_interface_property PLL_P_inst_rst_bfm clk CLASS_NAME
+Info: add_connection PLL_P_inst_rst_bfm.reset PLL_P_inst.rst
+Info: send_message Info TB_Gen: Saving testbench system: PLL_P_tb.qsys
+Info: TB_Gen: Saving testbench system: PLL_P_tb.qsys
+Info: save_system PLL_P_tb.qsys
+Info: send_message Info TB_Gen: TBGEN SUCCESSFUL
+Info: TB_Gen: TBGEN SUCCESSFUL
+Info: Testbench system: C:/Users/USER/Downloads/PROYECTO FPGA/70/60/PLL_P/testbench/PLL_P_tb.qsys
+Info: Done
+Info: Finished: Create testbench Qsys system
+Info: Starting: Create block symbol file (.bsf)
+Info: ip-generate --project-directory="C:/Users/USER/Downloads/PROYECTO FPGA/70/60/" --output-directory="C:/Users/USER/Downloads/PROYECTO FPGA/70/60/PLL_P/" --report-file="bsf:C:/Users/USER/Downloads/PROYECTO FPGA/70/60/PLL_P.bsf" --system-info=DEVICE_FAMILY="Cyclone III" --system-info=DEVICE=EP3C16F484C6 --system-info=DEVICE_SPEEDGRADE=6 --component-file="C:/Users/USER/Downloads/PROYECTO FPGA/70/60/PLL_P.qsys"
+Progress: Loading 60/PLL_P.qsys
+Progress: Reading input file
+Progress: Adding altpll_0 [altpll 13.0]
+Progress: Parameterizing module altpll_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Warning: PLL_P.altpll_0: altpll_0.pll_slave must be connected to an Avalon-MM master
+Warning: PLL_P.altpll_0: altpll_0.areset_conduit must be exported, or connected to a matching conduit.
+Warning: PLL_P.altpll_0: altpll_0.locked_conduit must be exported, or connected to a matching conduit.
+Warning: PLL_P.altpll_0: altpll_0.phasedone_conduit must be exported, or connected to a matching conduit.
+Info: ip-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: ip-generate --project-directory="C:/Users/USER/Downloads/PROYECTO FPGA/70/60/" --output-directory="C:/Users/USER/Downloads/PROYECTO FPGA/70/60/PLL_P/synthesis/" --file-set=QUARTUS_SYNTH --report-file="sopcinfo:C:/Users/USER/Downloads/PROYECTO FPGA/70/60/PLL_P.sopcinfo" --report-file="html:C:/Users/USER/Downloads/PROYECTO FPGA/70/60/PLL_P.html" --report-file="qip:C:/Users/USER/Downloads/PROYECTO FPGA/70/60/PLL_P/synthesis/PLL_P.qip" --report-file="cmp:C:/Users/USER/Downloads/PROYECTO FPGA/70/60/PLL_P.cmp" --report-file=svd --system-info=DEVICE_FAMILY="Cyclone III" --system-info=DEVICE=EP3C16F484C6 --system-info=DEVICE_SPEEDGRADE=6 --component-file="C:/Users/USER/Downloads/PROYECTO FPGA/70/60/PLL_P.qsys" --language=VHDL
+Progress: Loading 60/PLL_P.qsys
+Progress: Reading input file
+Progress: Adding altpll_0 [altpll 13.0]
+Progress: Parameterizing module altpll_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Warning: PLL_P.altpll_0: altpll_0.pll_slave must be connected to an Avalon-MM master
+Warning: PLL_P.altpll_0: altpll_0.areset_conduit must be exported, or connected to a matching conduit.
+Warning: PLL_P.altpll_0: altpll_0.locked_conduit must be exported, or connected to a matching conduit.
+Warning: PLL_P.altpll_0: altpll_0.phasedone_conduit must be exported, or connected to a matching conduit.
+Info: PLL_P: Generating PLL_P "PLL_P" for QUARTUS_SYNTH
+Info: pipeline_bridge_swap_transform: After transform: 1 modules, 0 connections
+Info: No custom instruction connections, skipping transform 
+Info: No Avalon connections, skipping transform 
+Info: merlin_translator_transform: After transform: 1 modules, 0 connections
+Info: altpll_0: "PLL_P" instantiated altpll "altpll_0"
+Info: PLL_P: Done PLL_P" with 2 modules, 2 files, 12879 bytes
+Info: ip-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

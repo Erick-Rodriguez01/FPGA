@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<simPackage>
+ <file
+   path="PLL_P/simulation/submodules/PLL_P_altpll_0.vho"
+   type="VHDL"
+   library="altpll_0" />
+ <file path="PLL_P/simulation/PLL_P.vhd" type="VHDL" />
+ <topLevel name="PLL_P" />
+ <deviceFamily name="cycloneiii" />
+</simPackage>
